@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation';
+
 import React from 'react'
 
 type Props = {
@@ -15,6 +17,13 @@ const {slug} = await params;
  if (slug[0] === '0') {
     return <div>Product not found</div>;
   }
+
+const vlParams: number = parseInt(slug[0], 0);
+
+ if (vlParams > 1000) {
+   notFound();
+  }
+
 
   return (
     <div>Product Page {slug[0]} and {slug[1]}</div>
