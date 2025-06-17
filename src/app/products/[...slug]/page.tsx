@@ -10,11 +10,10 @@ type Props = {
 
 export const generateMetadata = async ({ params }: Props) => {
   const { slug } = await params;
-  const productID: number = parseInt(slug[0], 0);
 
   return {
-    title: `Product ${productID}`,
-    description: `Details about product ${slug[0]}`,
+    title: `Product ${slug}`,
+    description: `Details about product ${slug}`,
   };
 };
 
@@ -37,7 +36,7 @@ const ProductPage = async ({ params }: Props) => {
 
   return (
     <div>
-      Product Page {slug[0]} and {slug[1]}
+      Product Page slung {slug[0]} and {slug[1]}
     </div>
   );
 };
